@@ -24,18 +24,14 @@
                 <div class="col-4 col-sm-3 col-md-2 align-self-center">
                     <img src="img/logo.png" class="img-fluid" alt="Nucamp Logo"/>
                 </div>
-                <div class="d-flex">
-                    <div class="col">
-                        <h1>Nucamp</h1>
-                        <h2>a better way to camp</h2>
-                    </div>
-                    
-                    <!-- reservation button -->
-                    <div class="col col-md-4 col-xl-2">
-                        <a href="#reserveForm">
-                            <button class="btn btn-info text-white">Reserve Campsite</button>
-                        </a>
-                    </div>
+                <div class="col">
+                    <h1>Nucamp</h1>
+                    <h2>a better way to camp</h2>
+                </div>
+                
+                <!-- reservation button -->
+                <div class="col col-md-4 col-xl-2">
+                    <button data-bs-toggle="modal" data-bs-target="#reserveModal" class="btn btn-info text-white">Reserve Campsite</button>
                 </div>
             </div>
         </div>
@@ -64,6 +60,7 @@
         </div>
     </nav>
 
+    <!-- Login Modal-->
     <div id="loginModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -103,10 +100,55 @@
                     </div>
                 </div>
             </div>
-
         </div>
+    </div>
 
-    </div>>
+    <!-- Reserve Modal -->
+    <div id="reserveModal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-info text-white">
+                    <h3 class="modal-title">Reserve a Campsite</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <!-- reservation form -->
+                            <form id="reserveForm">
+                                <div class="row mb-3">
+                                    <label class="col-sm-6 col-form-label" for="campers">Number of Campers</label>
+                                    <div class="col">
+                                        <select class="form-select  text-secondary" name="campers" id="campers">
+                                            <option value="" disabled selected>Select...</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label class="col-sm-6 col-form-label" for="date">Date</label>
+                                    <div class="col">
+                                        <input class="form-control text-secondary" type="text" onblur="(this.type='text')" onfocus="(this.type='date')" name="date" id="date" placeholder="mm/dd/yyyy">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- main section -->
     <main class="container">
@@ -158,46 +200,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- reservation form -->
-         <section class="row row-content">
-            <div class="col-sm-9 mx-auto">
-                <div class="card">
-                    <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
-                    <div class="card-body">
-                        <form id="reserveForm">
-                            <div class="row mb-3">
-                                <label class="col-sm-6 col-form-label" for="campers">Number of Campers</label>
-                                <div class="col">
-                                    <select class="form-select  text-secondary" name="campers" id="campers">
-                                        <option value="" disabled selected>Select...</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label class="col-sm-6 col-form-label" for="date">Date</label>
-                                <div class="col">
-                                    <input class="form-control text-secondary" type="text" onblur="(this.type='text')" onfocus="(this.type='date')" name="date" placeholder="mm/dd/yyyy">
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <div class="col">
-                                    <button class="btn btn-primary" type="submit">Search</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-         </section>
 
 	</main>
 
